@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "15a03487-b2a3-49dd-82db-4518e142228c",
+		"name": "EF_APP_LagosSilva",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38292027"
+	},
+	{
+		"name": "AccesoPublico",
+		"request": {
+			"method": "GET",
+			"header": [],
+			"url": {
+				"raw": "http://localhost:8080/api/public",
+				"protocol": "http",
+				"host": [
+					"localhost"
+				],
+				"port": "8080",
+				"path": [
+					"api",
+					"public"
+				]
+			}
+		},
+		"response": []
+	},
+	{
+		"name": "AccesoAutenticado",
+		"request": {
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjbGllbnQiLCJhdWQiOiJjbGllbnQiLCJuYmYiOjE3Mjk1NzQyMzAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4NSIsImV4cCI6MTcyOTU3NjAzMCwiaWF0IjoxNzI5NTc0MjMwLCJqdGkiOiIyMmYwZjBkNS1jZmE2LTQyZDItYjVlMy0xNjNjY2VhYWE1YjQifQ.htHXjDnwQHkuqQfXQHHFsvDtfqonD8P4OLVA0o-uLzA",
+						"type": "string"
+					}
+				]
+			},
+			"method": "GET",
+			"header": [],
+			"url": {
+				"raw": "http://localhost:8080/api/private",
+				"protocol": "http",
+				"host": [
+					"localhost"
+				],
+				"port": "8080",
+				"path": [
+					"api",
+					"private"
+				]
+			}
+		},
+		"response": []
+	},
+	{
+		"name": "oauthToken",
+		"request": {
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "secret",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "client",
+						"type": "string"
+					}
+				]
+			},
+			"method": "POST",
+			"header": [],
+			"body": {
+				"mode": "urlencoded",
+				"urlencoded": [
+					{
+						"key": "grant_type",
+						"value": "client_credentials",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "jose123",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "1234",
+						"type": "text"
+					}
+				]
+			},
+			"url": {
+				"raw": "http://localhost:8085/oauth2/token",
+				"protocol": "http",
+				"host": [
+					"localhost"
+				],
+				"port": "8085",
+				"path": [
+					"oauth2",
+					"token"
+				]
+			}
+		},
+		"response": []
+	}
+]
+}
